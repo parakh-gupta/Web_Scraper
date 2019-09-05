@@ -7,14 +7,7 @@
 import os
 from bs4 import BeautifulSoup
 from selenium import webdriver
-from selenium.webdriver.common.keys import Keys
-from selenium.webdriver.common.by import By
-import time
 import sys
-import numpy as np
-import pandas as pd
-import requests
-import regex as re
 import json
 
 
@@ -28,7 +21,7 @@ sys.path.append(chromedriver)
 driver = webdriver.Chrome(chromedriver)
 
 
-# In[4]:
+# In[3]:
 
 
 def get_house_links( driver):
@@ -45,7 +38,7 @@ def get_house_links( driver):
             get_data(soup)
 
 
-# In[5]:
+# In[4]:
 
 
 def get_data(soup):
@@ -133,7 +126,7 @@ def get_data(soup):
                         }
 
             }
-        print(var)
+        #print(var)
         h.append(var)
     with open("data.json",'r+') as f:
         feeds = json.load(f)
@@ -143,7 +136,7 @@ def get_data(soup):
         json.dump(feeds, f)
 
 
-# In[6]:
+# In[5]:
 
 
 v={
